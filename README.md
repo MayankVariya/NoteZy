@@ -1,14 +1,14 @@
-# 📒 NoteZy - Flutter Notes App
+**# 📒 NoteZy - Flutter Notes App
 
 NoteZy is a responsive note-taking Flutter app using Firebase Firestore and Email/Password Authentication. Built with Clean Architecture, Riverpod, and `go_router`, it works seamlessly across mobile and tablet devices.
 
 ## 🎥 Mobile Demo
 
-🎬 [Click to watch mobile screen recording](docs/mobile_demo.mp4)
+🎬 [Click to watch mobile screen recording](docs/mobile_demo.gif)
 
 ## 💻 Tablet Demo
 
-🎬 [Click to watch tablet screen recording](docs/tablet_demo.mp4)
+🎬 [Click to watch tablet screen recording](docs/tablet_demo.gif)
 
 
 ---
@@ -37,12 +37,15 @@ NoteZy is a responsive note-taking Flutter app using Firebase Firestore and Emai
 
 ```bash
 flutter pub run build_runner build --delete-conflicting-outputs
+```
+
+---
 
 ## ▶️ Getting Started
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/notezy.git
+git clone https://github.com/MayankVariya/notezy.git
 cd notezy
 
 # 2. Install dependencies
@@ -53,9 +56,12 @@ flutterfire configure
 
 # 4. Run the app
 flutter run
+```
+
+---
 
 📬 For feedback or questions: [mdvvariya@gmail.com] 
 
-✨ Stay productive. Take notes. Use NoteZy. ✨
+✨ Stay productive. Take notes. Use NoteZy. ✨**
 
 
