@@ -1,0 +1,35 @@
+{
+  "app_name": "NoteZy",
+
+  "@SIGN_IN": {
+  },
+  "sign_in_screen_title": "Welcome Back!",
+  "sign_in_screen_email_label": "Email",
+  "sign_in_screen_email_hint": "example@gmail.com",
+  "sign_in_screen_password_label": "Password",
+  "sign_in_screen_password_hint": "******",
+  "sign_in_screen_button": "Sign In",
+  "sign_in_screen_forgot_password": "Forgot Password?",
+  "sign_in_screen_sign_up_description": "Don't have an account? ",
+
+  "@SIGN_UP": {
+  },
+  "sign_up_title": "Sign Up",
+  "sign_up_screen_title": "Create an Account",
+  "sign_up_screen_sign_in_description": "Already have an account? ",
+  "sign_up_screen_name_label": "Name",
+  "sign_up_screen_name_hint": "John Doe",
+
+  "@EDIT_NOTE": {
+  },
+  "edit_note_screen_title": "Edit Note",
+  "edit_note_screen_add_title": "Add Note",
+  "edit_note_screen_note": "Note",
+  "edit_note_screen_note_title": "Title",
+
+  "@HOME": {
+  },
+  "home_screen_empty_detail_title": "Select or create a note.",
+  "home_screen_empty_notes_title": "No Notes"
+
+}
