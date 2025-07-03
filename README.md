@@ -4,11 +4,11 @@ NoteZy is a responsive note-taking Flutter app using Firebase Firestore and Emai
 
 ## 🎥 Mobile Demo
 
-🎬 [Click to watch mobile screen recording](docs/mobile_demo.gif)
+🎬 [Click to watch mobile screen recording](docs/mobile_demo.mp4)
 
 ## 💻 Tablet Demo
 
-🎬 [Click to watch tablet screen recording](docs/tablet_demo.gif)
+🎬 [Click to watch tablet screen recording](docs/tablet_demo.mp4)
 
 
 ---
