@@ -7,9 +7,9 @@ import 'package:notezy/shared/widgets/app_text_field.dart';
 import 'package:notezy/shared/widgets/app_toast.dart';
 import 'package:notezy/shared/widgets/icon_button.dart';
 
-import '../../data/models/note.dart';
-import '../home_view_notifier.dart';
-import 'edit_note_view_notifier.dart';
+import '../../domain/models/note.dart';
+import '../notifiers/home_view_notifier.dart';
+import '../notifiers/edit_note_view_notifier.dart';
 
 class EditNoteScreen extends ConsumerStatefulWidget {
   final Note? note;

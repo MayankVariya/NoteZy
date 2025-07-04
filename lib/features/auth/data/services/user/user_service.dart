@@ -1,16 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:notezy/core/errors/app_error.dart';
-import 'package:notezy/features/auth/data/models/user.dart';
-import 'package:notezy/features/auth/domain/repositories/user_repository.dart';
 
-import '../../../../core/utils/firestore_const.dart';
+import '../../../../../core/utils/firestore_const.dart';
+import '../../../domain/models/user_model.dart';
 
-final userRepositoryProvider = Provider<UserRepository>(
-  (ref) => UserService(FirebaseFirestore.instance),
-);
-
-class UserService implements UserRepository {
+class UserService {
   final FirebaseFirestore _firestore;
 
   UserService(this._firestore);
@@ -22,7 +16,6 @@ class UserService implements UserRepository {
         toFirestore: (user, options) => user.toJson(),
       );
 
-  @override
   Future<UserModel?> getUser(String id) async {
     try {
       final snapshot = await _userRef.doc(id).get();
@@ -32,7 +25,6 @@ class UserService implements UserRepository {
     }
   }
 
-  @override
   Future<UserModel> upsertUser({
     required String uid,
     required String email,

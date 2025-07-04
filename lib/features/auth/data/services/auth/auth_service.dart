@@ -1,25 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:notezy/core/errors/app_error.dart';
 import 'package:notezy/core/storage/provider.dart';
-import 'package:notezy/features/auth/data/models/user.dart';
-import 'package:notezy/features/auth/domain/repositories/auth_repository.dart';
 import 'package:notezy/features/auth/domain/repositories/user_repository.dart';
 
-import '../../../../core/storage/app_preferences.dart';
-import 'user_service.dart';
-
-final firebaseAuthProvider = Provider((ref) => FirebaseAuth.instance);
-
-final authRepositoryProvider = Provider<AuthRepository>(
-  (ref) => AuthService(
-    ref.read(firebaseAuthProvider),
-    ref.read(userRepositoryProvider),
-    ref.read(currentUserJsonPod.notifier),
-  ),
-);
-
-class AuthService implements AuthRepository {
+class AuthService {
   final FirebaseAuth _firebaseAuth;
   final UserRepository _userRepository;
 
@@ -31,8 +15,7 @@ class AuthService implements AuthRepository {
     this._currentUserNotifier,
   );
 
-  @override
-  Future<UserModel?> login(String email, String password) async {
+  Future<void> login(String email, String password) async {
     try {
       final userCredential = await _firebaseAuth.signInWithEmailAndPassword(
         email: email,
@@ -45,15 +28,12 @@ class AuthService implements AuthRepository {
           pass: password,
         );
         _currentUserNotifier.state = user.toJsonString();
-        return user;
       }
-      return null;
     } catch (e) {
       throw AppError.fromError(e);
     }
   }
 
-  @override
   Future<void> logout() async {
     try {
       await _firebaseAuth.signOut();
@@ -63,8 +43,7 @@ class AuthService implements AuthRepository {
     }
   }
 
-  @override
-  Future<UserModel?> signup({
+  Future<void> signup({
     required String email,
     required String pass,
     String? name,
@@ -82,9 +61,7 @@ class AuthService implements AuthRepository {
           name: name,
         );
         _currentUserNotifier.state = user.toJsonString();
-        return user;
       }
-      return null;
     } catch (e) {
       throw AppError.fromError(e);
     }

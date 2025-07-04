@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:notezy/core/extensions/context_extension.dart';
-import 'package:notezy/features/auth/presentation/sign_in/sign_in_view_notifier.dart';
+import 'package:notezy/features/auth/presentation/notifiers/sign_in_view_notifier.dart';
 import 'package:notezy/shared/widgets/app_toast.dart';
 
 import '../../../../gen/assets.gen.dart';

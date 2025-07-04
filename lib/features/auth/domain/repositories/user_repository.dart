@@ -1,4 +1,4 @@
-import 'package:notezy/features/auth/data/models/user.dart';
+import '../models/user_model.dart';
 
 abstract class UserRepository {
   Future<UserModel?> getUser(String id);

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:notezy/features/auth/data/services/auth_service.dart';
 import 'package:notezy/features/auth/domain/repositories/auth_repository.dart';
+
+import '../../../../core/di/providers.dart';
 
 part 'sign_up_view_notifier.freezed.dart';
 
@@ -46,14 +47,8 @@ class SignUpViewNotifier extends StateNotifier<SignUpState> {
       final pass = state.passwordController.text.trim();
       final name = state.nameController.text.trim();
 
-      final result = await _authRepository.signup(
-        email: email,
-        pass: pass,
-        name: name,
-      );
-      if (result != null) {
-        state = state.copyWith(success: true, loading: false);
-      }
+      await _authRepository.signup(email: email, pass: pass, name: name);
+      state = state.copyWith(success: true, loading: false);
     } catch (e) {
       state = state.copyWith(error: e, loading: false);
     }

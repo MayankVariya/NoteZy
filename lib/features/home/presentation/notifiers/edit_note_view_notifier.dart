@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:notezy/core/storage/app_preferences.dart';
 
-import '../../data/models/note.dart';
-import '../../data/services/note_service.dart';
+import '../../../../core/di/providers.dart';
+import '../../domain/models/note.dart';
 import '../../domain/repositories/note_repository.dart';
 
 part 'edit_note_view_notifier.freezed.dart';

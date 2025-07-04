@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:notezy/core/extensions/context_extension.dart';
 
 import '../../../../shared/typography/typography.dart';
-import '../../data/models/note.dart' show Note;
+import '../../domain/models/note.dart';
 
 class NoteList extends StatelessWidget {
   final List<Note> notes;

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:notezy/core/extensions/context_extension.dart';
-import 'package:notezy/features/home/presentation/components/note_list.dart';
 import 'package:notezy/shared/widgets/icon_button.dart';
 
 import '../../../../shared/typography/typography.dart';
-import '../../data/models/note.dart';
-import '../edit/edit_note_screen.dart';
+import '../../domain/models/note.dart';
+import '../screens/edit_note_screen.dart';
+import 'note_list.dart';
 
 class NotesTabletLayout extends StatefulWidget {
   final bool isLoading;

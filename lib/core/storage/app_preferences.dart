@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:notezy/core/storage/provider.dart';
 
-import '../../features/auth/data/models/user.dart';
-import '../../features/auth/data/services/auth_service.dart';
+import '../../features/auth/domain/models/user_model.dart';
+import '../di/providers.dart';
 
 final currentUserPod = Provider<UserModel?>((ref) {
   final json = ref.watch(currentUserJsonPod);

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:notezy/features/auth/presentation/sign_in/sign_in_screen.dart';
-import 'package:notezy/features/auth/presentation/sign_up/sign_up_screen.dart';
-import 'package:notezy/features/home/presentation/home_screen.dart';
+import 'package:notezy/features/auth/presentation/screens/sign_in_screen.dart';
+import 'package:notezy/features/auth/presentation/screens/sign_up_screen.dart';
+import 'package:notezy/features/home/presentation/screens/home_screen.dart';
 
-import '../features/home/data/models/note.dart';
-import '../features/home/presentation/edit/edit_note_screen.dart';
+import '../features/home/domain/models/note.dart';
+import '../features/home/presentation/screens/edit_note_screen.dart';
 
 part 'routes.g.dart';
 

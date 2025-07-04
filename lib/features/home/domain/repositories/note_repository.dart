@@ -1,4 +1,4 @@
-import '../../data/models/note.dart';
+import '../models/note.dart';
 
 abstract class NoteRepository {
   Stream<List<Note>> streamNotes(String userId);

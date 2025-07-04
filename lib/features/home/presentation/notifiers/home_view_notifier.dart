@@ -3,12 +3,11 @@ import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:notezy/core/storage/app_preferences.dart';
-import 'package:notezy/features/auth/data/services/auth_service.dart';
 import 'package:notezy/features/auth/domain/repositories/auth_repository.dart';
-import 'package:notezy/features/home/data/services/note_service.dart';
 
-import '../data/models/note.dart';
-import '../domain/repositories/note_repository.dart';
+import '../../../../core/di/providers.dart';
+import '../../domain/models/note.dart';
+import '../../domain/repositories/note_repository.dart';
 
 part 'home_view_notifier.freezed.dart';
 

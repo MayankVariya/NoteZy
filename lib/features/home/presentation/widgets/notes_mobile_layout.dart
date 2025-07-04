@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../navigation/routes.dart';
-import '../../data/models/note.dart';
+import '../../domain/models/note.dart';
 import 'note_list.dart';
 
 class NotesMobileLayout extends StatelessWidget {

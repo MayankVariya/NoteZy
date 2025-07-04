@@ -3,12 +3,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:notezy/core/extensions/context_extension.dart';
 import 'package:notezy/shared/widgets/icon_button.dart';
 
-import '../../../navigation/routes.dart';
-import '../../../shared/typography/typography.dart' show AppTextStyles;
-import '../../../shared/widgets/app_toast.dart';
-import 'components/notes_mobile_layout.dart';
-import 'components/notes_tablet_layout.dart';
-import 'home_view_notifier.dart';
+import '../../../../navigation/routes.dart';
+import '../../../../shared/typography/typography.dart' show AppTextStyles;
+import '../../../../shared/widgets/app_toast.dart';
+import '../notifiers/home_view_notifier.dart';
+import '../widgets/notes_mobile_layout.dart';
+import '../widgets/notes_tablet_layout.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});

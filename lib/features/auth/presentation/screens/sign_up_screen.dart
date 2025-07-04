@@ -9,7 +9,7 @@ import '../../../../gen/assets.gen.dart';
 import '../../../../shared/typography/typography.dart';
 import '../../../../shared/widgets/app_text_field.dart';
 import '../../../../shared/widgets/primary_button.dart';
-import 'sign_up_view_notifier.dart';
+import '../notifiers/sign_up_view_notifier.dart';
 
 class SignUpScreen extends ConsumerStatefulWidget {
   const SignUpScreen({super.key});
