@@ -34,7 +34,7 @@ class SignInViewNotifier extends StateNotifier<SignInState> {
       enableBtn:
           state.emailController.text.isNotEmpty &&
           state.passwordController.text.isNotEmpty &&
-          state.passwordController.text.length >= 7,
+          state.passwordController.text.length >= 6,
     );
   }
 

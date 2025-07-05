@@ -15,5 +15,5 @@ extension BuildContextExtension on BuildContext {
 
   Size get mediaQuerySize => MediaQuery.sizeOf(this);
 
-  bool get isTablet => mediaQuerySize.width > 600;
+  bool get isTablet => MediaQuery.of(this).size.shortestSide >= 600;
 }

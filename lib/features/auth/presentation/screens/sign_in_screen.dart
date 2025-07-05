@@ -55,97 +55,97 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
     final state = ref.watch(signInViewModelProvider);
 
     return Scaffold(
+      backgroundColor: context.colorScheme.surface,
       body: Center(
-        child: SingleChildScrollView(
-          child: Padding(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: context.isTablet ? 600 : double.infinity,
+          ),
+          child: ListView(
             padding: const EdgeInsets.all(24),
-            child: SafeArea(
-              child: SizedBox(
-                width: context.isTablet
-                    ? context.mediaQuerySize.width / 2
-                    : double.infinity,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      Assets.images.icApp.path,
-                      width: 100,
-                      height: 100,
+            shrinkWrap: true,
+            children: [
+              Column(
+                spacing: 16,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    Assets.images.icApp.path,
+                    width: 100,
+                    height: 100,
+                  ),
+                  Text(
+                    context.l10n.sign_in_screen_title,
+                    style: AppTextStyles.header2.copyWith(
+                      color: context.colorScheme.textPrimary,
                     ),
-                    Text(
-                      context.l10n.sign_in_screen_title,
-                      style: AppTextStyles.header2.copyWith(
-                        color: context.colorScheme.textPrimary,
+                  ),
+                  const SizedBox(height: 8),
+                  AppTextField(
+                    controller: state.emailController,
+                    label: context.l10n.sign_in_screen_email_label,
+                    hintText: context.l10n.sign_in_screen_email_hint,
+                    keyboardType: TextInputType.emailAddress,
+                    hintStyle: AppTextStyles.subtitle1.copyWith(
+                      color: context.colorScheme.textDisabled,
+                    ),
+                    borderType: AppTextFieldBorderType.outline,
+                    backgroundColor: context.colorScheme.containerLow,
+                    onChanged: _notifier.onChanged,
+                  ),
+                  AppTextField(
+                    controller: state.passwordController,
+                    label: context.l10n.sign_in_screen_password_label,
+                    hintText: context.l10n.sign_in_screen_password_hint,
+                    keyboardType: TextInputType.number,
+                    hintStyle: AppTextStyles.subtitle1.copyWith(
+                      color: context.colorScheme.textDisabled,
+                    ),
+                    borderType: AppTextFieldBorderType.outline,
+                    backgroundColor: context.colorScheme.containerLow,
+                    obscureText: !state.showPassword,
+                    suffixIcon: GestureDetector(
+                      onTap: _notifier.showPassword,
+                      child: Icon(
+                        state.showPassword
+                            ? Icons.visibility
+                            : Icons.visibility_off,
                       ),
                     ),
-                    const SizedBox(height: 24),
-                    AppTextField(
-                      controller: state.emailController,
-                      label: context.l10n.sign_in_screen_email_label,
-                      hintText: context.l10n.sign_in_screen_email_hint,
-                      keyboardType: TextInputType.emailAddress,
-                      hintStyle: AppTextStyles.subtitle1.copyWith(
-                        color: context.colorScheme.textDisabled,
+                    onChanged: _notifier.onChanged,
+                  ),
+                  const SizedBox(height: 8),
+                  PrimaryButton(
+                    onPressed: _notifier.login,
+                    expanded: true,
+                    enabled: state.enableBtn && !state.loading,
+                    loading: state.loading,
+                    text: context.l10n.sign_in_screen_button,
+                  ),
+                  const SizedBox(height: 24),
+                  Text.rich(
+                    textAlign: TextAlign.center,
+                    TextSpan(
+                      text: context.l10n.sign_in_screen_sign_up_description,
+                      style: AppTextStyles.subtitle1.copyWith(
+                        color: context.colorScheme.textSecondary,
                       ),
-                      borderType: AppTextFieldBorderType.outline,
-                      backgroundColor: context.colorScheme.containerLow,
-                      onChanged: _notifier.onChanged,
-                    ),
-                    const SizedBox(height: 16),
-                    AppTextField(
-                      controller: state.passwordController,
-                      label: context.l10n.sign_in_screen_password_label,
-                      hintText: context.l10n.sign_in_screen_password_hint,
-                      keyboardType: TextInputType.number,
-                      hintStyle: AppTextStyles.subtitle1.copyWith(
-                        color: context.colorScheme.textDisabled,
-                      ),
-                      borderType: AppTextFieldBorderType.outline,
-                      backgroundColor: context.colorScheme.containerLow,
-                      obscureText: !state.showPassword,
-                      suffixIcon: GestureDetector(
-                        onTap: _notifier.showPassword,
-                        child: Icon(
-                          state.showPassword
-                              ? Icons.visibility
-                              : Icons.visibility_off,
-                        ),
-                      ),
-                      onChanged: _notifier.onChanged,
-                    ),
-                    const SizedBox(height: 16),
-                    PrimaryButton(
-                      onPressed: _notifier.login,
-                      expanded: true,
-                      enabled: state.enableBtn && !state.loading,
-                      loading: state.loading,
-                      text: context.l10n.sign_in_screen_button,
-                    ),
-                    const SizedBox(height: 40),
-                    Text.rich(
-                      TextSpan(
-                        text: context.l10n.sign_in_screen_sign_up_description,
-                        style: AppTextStyles.subtitle1.copyWith(
-                          color: context.colorScheme.textSecondary,
-                        ),
-                        children: [
-                          TextSpan(
-                            text: context.l10n.sign_up_title,
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () => SignUpRoute().go(context),
-                            style: AppTextStyles.subtitle1.copyWith(
-                              color: context.colorScheme.primary,
-                            ),
+                      children: [
+                        TextSpan(
+                          text: context.l10n.sign_up_title,
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () => SignUpRoute().go(context),
+                          style: AppTextStyles.subtitle1.copyWith(
+                            color: context.colorScheme.primary,
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                    const SizedBox(height: 40),
-                  ],
-                ),
+                  ),
+                  const SizedBox(height: 24),
+                ],
               ),
-            ),
+            ],
           ),
         ),
       ),

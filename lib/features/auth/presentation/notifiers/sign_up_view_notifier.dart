@@ -35,7 +35,7 @@ class SignUpViewNotifier extends StateNotifier<SignUpState> {
       enableBtn:
           state.emailController.text.isNotEmpty &&
           state.passwordController.text.isNotEmpty &&
-          state.passwordController.text.length >= 7 &&
+          state.passwordController.text.length >= 6 &&
           state.nameController.text.isNotEmpty,
     );
   }

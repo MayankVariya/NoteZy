@@ -51,6 +51,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final selectedNote = ref.watch(selectedNoteProvider);
 
     return Scaffold(
+      backgroundColor: context.colorScheme.surface,
       appBar: isTablet
           ? null
           : AppBar(

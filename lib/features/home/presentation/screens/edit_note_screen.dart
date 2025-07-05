@@ -147,6 +147,7 @@ class _EditNoteScreenState extends ConsumerState<EditNoteScreen> {
             ],
           )
         : Scaffold(
+            backgroundColor: context.colorScheme.surface,
             appBar: AppBar(
               title: title,
               actions: actions,
@@ -154,7 +155,7 @@ class _EditNoteScreenState extends ConsumerState<EditNoteScreen> {
               actionsPadding: const EdgeInsets.only(right: 16),
               shadowColor: context.colorScheme.outline,
             ),
-            body: form,
+            body: SafeArea(child: form),
           );
   }
 }
