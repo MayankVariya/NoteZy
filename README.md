@@ -36,7 +36,7 @@ NoteZy is a responsive note-taking Flutter app using Firebase Firestore and Emai
 ### ⚙️ Code Generation
 
 ```bash
-flutter pub run build_runner build --delete-conflicting-outputs
+dart pub run build_runner build --delete-conflicting-outputs
 ```
 
 ---
@@ -62,6 +62,6 @@ flutter run
 
 📬 For feedback or questions: [mdvvariya@gmail.com] 
 
-✨ Stay productive. Take notes. Use NoteZy. ✨**
+**✨ Stay productive. Take notes. Use NoteZy. ✨**
 
 
