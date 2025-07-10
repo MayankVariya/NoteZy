@@ -26,33 +26,14 @@ NoteZy is a responsive note-taking Flutter app using Firebase Firestore and Emai
 
 ---
 
-### 🔥 Firebase Setup
-
-👉 Configure Firebase using the official FlutterFire CLI guide:  
-[https://firebase.flutter.dev/docs/cli](https://firebase.flutter.dev/docs/cli)
-
----
-
-### ⚙️ Code Generation
-
-```bash
-dart pub run build_runner build --delete-conflicting-outputs
-```
-
----
-
 ### ▶️ Getting Started
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/MayankVariya/notezy.git
-cd notezy
+git clone https://github.com/MayankVariya/NoteZy.git
 
 # 2. Install dependencies
 flutter pub get
-
-# 3. Configure Firebase (follow FlutterFire CLI setup)
-flutterfire configure
 
 # 4. Run the app
 flutter run
