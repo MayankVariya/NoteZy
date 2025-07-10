@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "466550173197",
+    "project_id": "notezy-ada5f",
+    "storage_bucket": "notezy-ada5f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466550173197:android:44f3e959e727439f662f44",
+        "android_client_info": {
+          "package_name": "com.example.notezy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIeK8hD6r5LdJJo4VUEWdwi22DRSaPeyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
